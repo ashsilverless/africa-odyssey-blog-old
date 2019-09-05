@@ -1326,7 +1326,7 @@ header {
   position: relative;
   -ms-grid-columns: 65% 35%;
   grid-template-columns: 65% 35%;
-  height: calc(50vh - 120px);
+  height: calc(100vh - 120px);
   border-bottom: 5px solid #262626; }
   .hero:before {
     content: '';
