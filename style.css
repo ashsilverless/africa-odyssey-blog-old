@@ -1247,6 +1247,7 @@ nav {
     text-align: right; }
 
 /*! == THEME == */
+/*--- HEADER--*/
 .site-wrapper {
   margin-top: 120px; }
 
@@ -1266,7 +1267,11 @@ header {
       margin-right: 2em;
       font-size: 14px; }
   header .primary-menu {
-    text-transform: uppercase; }
+    position: relative;
+    text-transform: uppercase;
+    z-index: 10; }
+    header .primary-menu li {
+      position: relative; }
   header .brand-logo {
     margin: 0.5em 0;
     text-align: center;
@@ -1298,7 +1303,7 @@ header {
       header .contact-section p:nth-of-type(2) {
         font-size: 0.75em;
         border-bottom: none; }
-  header .sub-menu {
+  header .hover-menu {
     display: none; }
   header .secondary-bar {
     padding: 0.5em 0;
@@ -1318,6 +1323,86 @@ header {
         border: none;
         border-radius: 50px; }
 
+header .hover-menu {
+  position: absolute;
+  top: 0;
+  padding-top: 3.5em;
+  background: transparent;
+  z-index: -1; }
+
+.countries-wrapper {
+  width: 1300px;
+  background: #262626;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; }
+  .countries-wrapper .imagemapbox img {
+    border: 5px solid #272727; }
+  .countries-wrapper .countries.menu {
+    margin-top: 2em;
+    margin-right: 2em; }
+  .countries-wrapper .menu-item-has-children {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    font-size: 2em; }
+    .countries-wrapper .menu-item-has-children > a {
+      position: relative;
+      display: block;
+      padding: 0 0.25em;
+      border-bottom: 1px solid #2a7a3c;
+      -webkit-transition: color 0.5s ease;
+      -o-transition: color 0.5s ease;
+      transition: color 0.5s ease; }
+      .countries-wrapper .menu-item-has-children > a span {
+        position: relative;
+        z-index: 10; }
+      .countries-wrapper .menu-item-has-children > a:before {
+        position: absolute;
+        content: '';
+        left: 0;
+        height: 100%;
+        width: 0;
+        background: #2a7a3c;
+        -webkit-transition: width 0.5s ease;
+        -o-transition: width 0.5s ease;
+        transition: width 0.5s ease;
+        z-index: 1; }
+      .countries-wrapper .menu-item-has-children > a:hover:before {
+        width: 100%; }
+  .countries-wrapper li {
+    width: 44%; }
+  .countries-wrapper li.menu-item-has-children:hover > a:before {
+    width: 100%; }
+  .countries-wrapper .sub-menu li a {
+    padding: 0.25em 0.5em;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    .countries-wrapper .sub-menu li a:hover {
+      background: #0f0f0f; }
+
+.hover-menu.standard-wrapper {
+  background: #262626;
+  left: -1em; }
+  .hover-menu.standard-wrapper ul li {
+    display: block;
+    border-bottom: 1px solid #3a3a3a;
+    margin: 0; }
+    .hover-menu.standard-wrapper ul li:last-of-type {
+      border-bottom: none; }
+    .hover-menu.standard-wrapper ul li a {
+      display: block;
+      padding: 0.5em 1em;
+      text-transform: none;
+      white-space: nowrap; }
+
+.primary-menu li:hover > .hover-menu,
+.hover-menu {
+  display: inherit; }
+
+/*--- HOME--*/
 .hero {
   background-size: cover !important;
   /* !important added as result of rule not working inside display:grid */
@@ -1654,6 +1739,7 @@ p + .wp-block-image {
       background: #2a7a3c;
       color: white; }
 
+/*--- FOOTER--*/
 .footer-leaders {
   margin: 5em 0 0;
   padding: 2em 0;
@@ -1772,6 +1858,7 @@ p + .wp-block-image {
   border-top: 1px solid white;
   background: #262626; }
 
+/*--- ARCHIVE--*/
 .archive-heading {
   position: fixed;
   width: 100%;
@@ -1865,6 +1952,7 @@ article.post {
       padding: 0.5em 1.5em;
       margin-bottom: 1em; }
 
+/*--- SINGLE--*/
 .single .hero {
   display: -ms-grid;
   display: grid;

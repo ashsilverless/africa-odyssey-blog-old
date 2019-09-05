@@ -41,18 +41,30 @@
             <div class="col align-vert-c">
                 <ul class="primary-menu">
                         <li><a href="">Where</a>
-                            <div class="sub-menu">
+                            <div class="hover-menu">
                                 <div class="countries-wrapper">
                                     <?php get_template_part('header-partials/nav-map');?>
                                     <?php
                                         wp_nav_menu( array(
                                         'theme_location' => 'countries-menu',
-                                        'container_class' => 'countries menu' ) );
+                                        'container_class' => 'countries menu',
+                                        'link_before' => '<span>','link_after'=>'</span>'
+                                         ) );
                                     ?>
                                 </div>            
                             </div>
                         </li>
-                        <li><a href="">When</a></li>
+                        <li><a href="">What</a>
+                            <div class="hover-menu standard-wrapper">
+                                        <?php
+                                            wp_nav_menu( array(
+                                            'theme_location' => 'what-menu',
+                                            'container_class' => 'what menu',
+                                            'link_before' => '<span>','link_after'=>'</span>'
+                                             ) );
+                                        ?>
+                                </div>
+                        </li>
                         <li><a href="">Inspire</a></li>
                         <li><a href="">More &plus; </a></li>
                     </ul>

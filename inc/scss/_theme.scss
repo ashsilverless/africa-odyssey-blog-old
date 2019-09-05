@@ -1,5 +1,7 @@
 /*! == THEME == */
 
+/*--- HEADER--*/
+
 .site-wrapper {
     margin-top:120px;
 }
@@ -27,7 +29,13 @@ header {
     }
     
     .primary-menu {
+        position: relative;
         text-transform: uppercase;
+        z-index: 10;
+        
+        li {
+            position: relative;
+        }
     }
 
     .brand-logo {
@@ -71,7 +79,7 @@ header {
         }
     }
     
-    .sub-menu {
+    .hover-menu {
         display: none;
     }
 
@@ -104,6 +112,111 @@ header {
         }
     }    
 }
+
+header .hover-menu {
+    position: absolute; 
+    top: 0;
+    padding-top: 3.5em;
+    background:transparent;
+    z-index: -1;
+}
+
+.countries-wrapper {
+    width: 1300px;
+    background: $header-color;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .imagemapbox img {
+        border: 5px solid #272727;
+    }
+
+    .countries.menu {
+        margin-top:2em;
+        margin-right: 2em
+    }
+    
+    .menu-item-has-children {
+        display: block;
+        width: 100%;
+        margin-bottom: 1em;
+        font-size: 2em;
+        
+        > a {
+            position: relative;
+            display: block;
+            padding: 0 0.25em;
+            border-bottom: 1px solid #2a7a3c;
+            transition: color 0.5s ease;
+            
+            span {
+                position: relative;
+                z-index: 10;
+            }
+            
+            &:before {
+                position: absolute;
+                content:'';
+                left: 0;
+                height: 100%;
+                width: 0;
+                background: $brand-primary;
+                transition:width 0.5s ease;
+                z-index: 1;
+            }
+            
+            &:hover:before {
+                width:100%;
+            }
+        }
+    }
+    
+    li {
+        width:44%;
+    }
+    
+    li.menu-item-has-children:hover > a:before {
+        width:100%;
+    }
+    
+    .sub-menu li a {
+        padding: 0.25em 0.5em;
+        transition: all 0.5s ease;
+        
+        &:hover {
+            background:#0f0f0f;
+        }
+    }
+}
+
+.hover-menu.standard-wrapper {
+    background: $header-color;
+    left:-1em; 
+        
+    ul li {
+        display: block; 
+        border-bottom: 1px solid #3a3a3a;
+        margin:0;
+        
+        &:last-of-type {
+            border-bottom: none;
+        }
+        
+        a {
+            display: block;
+            padding:0.5em 1em;
+            text-transform: none;
+            white-space: nowrap;
+        }
+    }
+}
+
+.primary-menu li:hover > .hover-menu,
+.hover-menu {
+    display: inherit;
+}
+
+/*--- HOME--*/
 
 .hero {
     @include backgroundCover;
@@ -468,6 +581,8 @@ p + .wp-block-image {
     }  
 }
 
+/*--- FOOTER--*/
+
 .footer-leaders {
     margin:5em 0 0;
     padding: 2em 0;
@@ -633,6 +748,8 @@ p + .wp-block-image {
     background:$header-color;
 }
 
+/*--- ARCHIVE--*/
+
 .archive-heading {
     position: fixed;
     width: 100%;
@@ -724,15 +841,15 @@ article.post {
    
    .content {
        padding: 0 1em;
-       
 
-       
        a.button {
           padding: 0.5em 1.5em;
           margin-bottom: 1em;
        }
    }
 }
+
+/*--- SINGLE--*/
 
 .single {
      .hero {
