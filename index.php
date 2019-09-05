@@ -1,0 +1,174 @@
+<?php
+/**
+ *
+ * @package aob
+ */
+get_header();?>
+
+    <?php 
+        $first_grid_query = new WP_Query(
+        array(
+            'posts_per_page'=>1
+        )
+        );
+        while ($first_grid_query->have_posts()) : $first_grid_query->the_post();
+            $imageid = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+$featimage = $imageid['0'];
+        endwhile; 
+    wp_reset_postdata(); 
+    ?>  
+
+<div class="hero" style="background-image: url(<?php echo $featimage; ?>);">
+    
+    <div class="container cols-8-4">
+    
+    
+    <div class="col align-vert-b pb3">
+        <div class="main">
+    <?php 
+        $first_grid_query = new WP_Query(
+        array(
+            'posts_per_page'=>1
+        )
+        );
+        while ($first_grid_query->have_posts()) : $first_grid_query->the_post();
+            $imageid = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+            the_title('<h2 class="heading heading__xl">', '</h2>');?>
+            <h3 class="heading heading__sm"><?php the_excerpt();?></h3>
+            <a href="<?php the_permalink();?>" class="button">Read More <span>&xrarr;</span></a>
+        <?php endwhile; 
+    wp_reset_postdata(); 
+    ?>  
+        </div>
+    </div>
+    
+    <div class="col">
+        <div class="secondary">
+            <div class="section-title">
+                <h4 class="heading heading__sm heading__caps heading__brand-font">Latest Posts</h4>
+            </div>
+            <?php 
+                $first_grid_posts_ids = wp_list_pluck( $first_grid_query->posts, 'ID' );
+                $second_grid_query = new WP_Query(
+                    array(
+                        'posts_per_page'=>3,
+                        'post__not_in' => $first_grid_posts_ids
+                    )
+                );
+                while ($second_grid_query->have_posts()) : $second_grid_query->the_post();
+                $imageid = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );$featimage = $imageid['0'];?>
+                
+                <a href="<?php the_permalink();?>" class="article-wrapper">
+                <article>
+                    <div class="image" style="background-image: url(<?php echo $featimage; ?>);"></div>
+                    
+                    <div class="content">
+                        
+                    <?php the_title('<h2 class="heading heading__sm">', '</h2>');?>
+                    <p class="category">Posted In <?php                         foreach((get_the_category()) as $category){
+                            echo $category->name;
+                            }?> on <?php the_date('jS F Y', '', ''); ?></p>
+                    </div>
+                    
+                </article>
+                </a>
+                <?php endwhile; 
+            wp_reset_postdata(); 
+            ?>        
+        </div>
+    </div>
+    
+    </div><!--c-->
+
+</div><!--hero-->
+
+<!--<div class="heading-bar mb5">
+    <div class="container">
+        <div class="col">
+            <h4 class="heading heading__md heading__caps">Explore The Blog</h4>
+        </div>
+    </div>
+</div>-->
+
+<div class="container">
+    <div class="col mt2 mb2">
+            <h3 class="heading heading__md heading__caps heading__brand-font center">Categories</h3>
+    </div>
+</div>
+
+
+<div class="container cols-3">
+
+    <?php if( have_rows('category_links') ):?>
+        
+    <?php while ( have_rows('category_links') ) : the_row();?>
+    
+    <div class="col mb3">
+
+        <?php 
+            $catID = get_sub_field('category');
+            $post_id = $catID->term_id;
+            $catTitle = get_cat_name($post_id); 
+            $category_link = get_category_link( $post_id );
+            $image = get_field( "image", $catID );?>
+            
+           <a href="<?php echo esc_url( $category_link ); ?>" title="Category Name" class="grid-wrap"> 
+                <div class="category-leader" style="background-image: url(<?php echo $image['url']; ?>);">
+
+                    <div>
+                        <h2 class="heading heading__sm"><?php echo $catTitle;?></h2>
+                    </div>
+                    <div class="article-count">
+                            <?php 
+                                $cat_count = get_category( $post_id );
+echo $cat_count->count;?><span> Articles</span>
+                    </div>
+                </div>
+            </a>
+    </div>       
+
+    <?php endwhile; endif;?>
+
+</div><!--c-->
+
+<!--<div class="heading-bar mb5">
+    <div class="container">
+        <div class="col">
+            <h4 class="heading heading__md heading__caps">Featured Article</h4>
+        </div>
+    </div>
+</div>-->
+
+<div class="container">
+    <div class="col">
+
+        <article class="featured">
+            <?php
+            query_posts('posts_per_page=1&cat=2122');
+            if ( have_posts() ) while ( have_posts() ) : the_post();
+            $featuredImage = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+        
+            <div class="banner-image" style="background-image: url(<?php echo $featuredImage['0']; ?>);">
+                <div class="label">
+                    <p><i class="fas fa-star"></i></i> Featured Article</p>
+                </div>
+            
+            </div>
+        
+            <div class="content">
+                <h2 class="heading heading__lg"><?php the_title();?></h2>
+                <p class="meta">Posted on <?php the_date('jS F Y', '', ''); ?></p>
+                <?php the_content(); ?>
+                
+                	<?php get_template_part('template-parts/additional', 'articles');?>
+            </div>
+        
+            <?php endwhile;
+                wp_reset_query();?>
+            
+        </article>
+
+    </div>
+</div><!--c-->
+
+<?php get_footer();?>
