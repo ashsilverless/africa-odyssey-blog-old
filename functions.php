@@ -2,7 +2,7 @@
 /**
  * aob functions and definitions
  *
- * @package deseraobtdelta
+ * @package aob
  */
 
 /** = Ditch Junk = */ 
@@ -17,7 +17,7 @@ function aob_scripts() {
 	
 	wp_enqueue_style( 'aob-style', get_stylesheet_uri() );
 
-	/*wp_enqueue_script( 'aob-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true); */
+	wp_enqueue_script( 'aob-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true);
 	
 }
 
@@ -30,7 +30,6 @@ function sl_custom_menu() {
     array(
         'countries-menu' => __( 'Countries Menu' ),
         'what-menu' => __( 'What Menu' ),
-        'inspire-menu' => __( 'Inspire Menu' ),
         'more-menu' => __( 'More Menu' ),
         'footer-menu1' => __( 'Footer Menu 1' ),
         'footer-menu2' => __( 'Footer Menu 2' )
@@ -130,6 +129,14 @@ function my_custom_fonts() {
 		'page_title' 	=> 'Site Settings',
 		'menu_title'	=> 'Site Settings',
 		'menu_slug' 	=> 'site-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Header Settings',
+		'menu_title'	=> 'Header Settings',
+		'menu_slug' 	=> 'header-settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));

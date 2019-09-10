@@ -35,6 +35,10 @@ header {
         
         li {
             position: relative;
+            
+            &:hover {
+                cursor:pointer;
+            }
         }
     }
 
@@ -119,6 +123,89 @@ header .hover-menu {
     padding-top: 3.5em;
     background:transparent;
     z-index: -1;
+}
+
+.where-wrapper,
+.inspire-wrapper,
+.more-wrapper {
+    max-height: 0;
+    overflow: hidden; 
+    transition: max-height 0.5s ease;
+    
+    &.expand,
+    &:hover {
+        max-height: 100vh;
+    }
+}
+
+.what-wrapper {
+    max-height: 0;
+    overflow: hidden; 
+    transition: all 0.5s ease;
+    
+    &.expand,
+    &:hover {
+        max-height: 25vh;
+    }
+    
+    .what-menu {
+        margin:1em 0;
+        
+        a {
+            padding: 0.25em 0.5em;
+            transition: all 0.5s ease;
+            &:hover {
+                background: #0f0f0f;
+            }
+        }
+    }
+}
+
+.inspire-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1em 0;
+    text-align: center;
+    a {
+        display: block;
+    }
+    .menu-item {
+        padding:1em;
+        transition: background 0.5s ease;
+        &:hover {
+            background: #0f0f0f;
+        }
+        
+        .image {
+            @include backgroundCover;
+            height:10em;
+        }
+        
+        p {
+            padding-bottom: 0.5em;
+            margin-bottom: 0;
+            border-bottom:3px solid $brand-primary;
+        }
+    }
+}
+
+.more.menu > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 1em;
+    
+    li {
+        padding:1em 0 0.5em;
+        border-bottom: 3px solid $brand-primary;
+        
+        a {
+            padding: 0.25em 0.5em;
+            transition: all 0.5s ease;
+            &:hover {
+                background: #0f0f0f;
+            }
+        } 
+    }
 }
 
 .countries-wrapper {
@@ -211,9 +298,9 @@ header .hover-menu {
     }
 }
 
-.primary-menu li:hover > .hover-menu,
-.hover-menu {
-    display: inherit;
+li.where:hover .where-wrapper,
+.where-wrapper:hover {
+    max-height: 100vh;
 }
 
 /*--- HOME--*/

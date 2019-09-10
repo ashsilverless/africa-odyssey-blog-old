@@ -40,33 +40,10 @@
 
             <div class="col align-vert-c">
                 <ul class="primary-menu">
-                        <li><a href="">Where</a>
-                            <div class="hover-menu">
-                                <div class="countries-wrapper">
-                                    <?php get_template_part('header-partials/nav-map');?>
-                                    <?php
-                                        wp_nav_menu( array(
-                                        'theme_location' => 'countries-menu',
-                                        'container_class' => 'countries menu',
-                                        'link_before' => '<span>','link_after'=>'</span>'
-                                         ) );
-                                    ?>
-                                </div>            
-                            </div>
-                        </li>
-                        <li><a href="">What</a>
-                            <div class="hover-menu standard-wrapper">
-                                        <?php
-                                            wp_nav_menu( array(
-                                            'theme_location' => 'what-menu',
-                                            'container_class' => 'what menu',
-                                            'link_before' => '<span>','link_after'=>'</span>'
-                                             ) );
-                                        ?>
-                                </div>
-                        </li>
-                        <li><a href="">Inspire</a></li>
-                        <li><a href="">More &plus; </a></li>
+                        <li class="where">Where</li>
+                        <li class="what">What</li>
+                        <li class="inspire">Inspire</li>
+                        <li class="more">More &plus;</li>
                     </ul>
             </div>
 
@@ -89,6 +66,72 @@
 
 
 
+</div>
+
+<div class="where-wrapper">
+    <div class="container">
+        <div class="col">
+        <div class="countries-wrapper">
+            <?php get_template_part('header-partials/nav-map');?>
+            <?php
+                wp_nav_menu( array(
+                'theme_location' => 'countries-menu',
+                'container_class' => 'countries menu',
+                'link_before' => '<span>','link_after'=>'</span>'
+                ) );
+            ?>
+        </div>               
+    </div>
+    </div>
+</div>
+
+<div class="what-wrapper">
+    <div class="container">
+        <div class="col">
+            <?php
+                wp_nav_menu( array(
+                'theme_location' => 'what-menu',
+                'container_class' => 'what-menu',
+                'link_before' => '<span>','link_after'=>'</span>'
+                ) );
+            ?>           
+        </div>
+    </div>
+</div>
+
+<div class="inspire-wrapper">
+    <div class="container">
+        <div class="col">
+            <div class="inspire-menu">
+            <?php if( have_rows('inspire_menu', 'options') ):
+                while ( have_rows('inspire_menu', 'options') ) : the_row();?>
+                <?php $inspireimage = get_sub_field('image');?>
+                    <div class="menu-item">
+                        <a href="<?php the_sub_field('item_target');?>">
+                        <div class="image" style="background-image: url(<?php echo $inspireimage['url']; ?>);"></div>
+                        <p><?php the_sub_field('item_text');?></p>
+                        </a>
+                    </div>
+                <?php endwhile; endif;?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="more-wrapper">
+    <div class="container">
+        <div class="col">
+        <div class="more-menu">
+            <?php
+                wp_nav_menu( array(
+                'theme_location' => 'more-menu',
+                'container_class' => 'more menu',
+                'link_before' => '<span>','link_after'=>'</span>'
+                ) );
+            ?>
+        </div>               
+    </div>
+    </div>
 </div>
 
 <div class="secondary-bar">

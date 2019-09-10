@@ -1272,6 +1272,8 @@ header {
     z-index: 10; }
     header .primary-menu li {
       position: relative; }
+      header .primary-menu li:hover {
+        cursor: pointer; }
   header .brand-logo {
     margin: 0.5em 0;
     text-align: center;
@@ -1329,6 +1331,83 @@ header .hover-menu {
   padding-top: 3.5em;
   background: transparent;
   z-index: -1; }
+
+.where-wrapper,
+.inspire-wrapper,
+.more-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease;
+  -o-transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease; }
+  .where-wrapper.expand, .where-wrapper:hover,
+  .inspire-wrapper.expand,
+  .inspire-wrapper:hover,
+  .more-wrapper.expand,
+  .more-wrapper:hover {
+    max-height: 100vh; }
+
+.what-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  .what-wrapper.expand, .what-wrapper:hover {
+    max-height: 25vh; }
+  .what-wrapper .what-menu {
+    margin: 1em 0; }
+    .what-wrapper .what-menu a {
+      padding: 0.25em 0.5em;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+      .what-wrapper .what-menu a:hover {
+        background: #0f0f0f; }
+
+.inspire-menu {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 1em 0;
+  text-align: center; }
+  .inspire-menu a {
+    display: block; }
+  .inspire-menu .menu-item {
+    padding: 1em;
+    -webkit-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease; }
+    .inspire-menu .menu-item:hover {
+      background: #0f0f0f; }
+    .inspire-menu .menu-item .image {
+      background-size: cover !important;
+      /* !important added as result of rule not working inside display:grid */
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      height: 10em; }
+    .inspire-menu .menu-item p {
+      padding-bottom: 0.5em;
+      margin-bottom: 0;
+      border-bottom: 3px solid #2a7a3c; }
+
+.more.menu > ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-bottom: 1em; }
+  .more.menu > ul li {
+    padding: 1em 0 0.5em;
+    border-bottom: 3px solid #2a7a3c; }
+    .more.menu > ul li a {
+      padding: 0.25em 0.5em;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+      .more.menu > ul li a:hover {
+        background: #0f0f0f; }
 
 .countries-wrapper {
   width: 1300px;
@@ -1398,9 +1477,9 @@ header .hover-menu {
       text-transform: none;
       white-space: nowrap; }
 
-.primary-menu li:hover > .hover-menu,
-.hover-menu {
-  display: inherit; }
+li.where:hover .where-wrapper,
+.where-wrapper:hover {
+  max-height: 100vh; }
 
 /*--- HOME--*/
 .hero {
