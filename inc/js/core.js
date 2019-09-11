@@ -1,3 +1,5 @@
+//@prepros-prepend owl.carousel.min.js
+
 jQuery(document).ready(function( $ ) {
 
 /* ADD CLASS ON LOAD*/
@@ -69,9 +71,48 @@ jQuery(document).ready(function( $ ) {
         $('.more-wrapper').addClass("expand");
     });
 
-    //$( ".more-wrapper" ).mouseout(function() {
-    //    $(this).removeClass( "expand" );
-    //});
+// GLOBAL OWL CAROUSEL SETTINGS
+
+    $('.small-carousel').owlCarousel({
+        loop:false,
+        autoplay:false,
+        autoplayHoverPause:true,
+        nav:true,
+        navText : ["&xlarr;","&xrarr;"],
+        navClass: ['owl-prev', 'owl-next'],
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:3
+            }
+        }
+    });
+
+    $('.category-carousel').owlCarousel({
+        loop:true,
+        autoplay:false,
+        autoplayHoverPause:true,
+        nav:false,
+        navText : ["&xlarr;","&xrarr;"],
+        navClass: ['owl-prev', 'owl-next'],
+        stagePadding: 100,
+        responsive:{
+            0:{
+                items:2
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    });
 
 });//Don't remove ---- end of jQuery wrapper
 

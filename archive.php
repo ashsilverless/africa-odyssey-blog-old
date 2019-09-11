@@ -10,7 +10,7 @@ get_header();?>
     <div class="container">
         <div class="col">    
                 <h1 class="heading heading__md heading__caps">
-                    <?php printf( __( 'Articles Marked %s', 'aob' ), '<span>' . single_cat_title( '', false ) . '</span>' );?>
+                    <?php printf( __( '%s', 'aob' ), '<span>' . single_cat_title( '', false ) . '</span>' );?>
                 </h1>
         </div>
     </div>

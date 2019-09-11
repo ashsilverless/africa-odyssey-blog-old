@@ -91,53 +91,12 @@ $featimage = $imageid['0'];
 </div>-->
 
 <div class="container">
-    <div class="col mt2 mb2">
+    <div class="col mt2 mb1">
             <h3 class="heading heading__md heading__caps heading__brand-font center">Categories</h3>
     </div>
 </div>
 
-
-<div class="container cols-3">
-
-    <?php if( have_rows('category_links') ):?>
-        
-    <?php while ( have_rows('category_links') ) : the_row();?>
-    
-    <div class="col mb3">
-
-        <?php 
-            $catID = get_sub_field('category');
-            $post_id = $catID->term_id;
-            $catTitle = get_cat_name($post_id); 
-            $category_link = get_category_link( $post_id );
-            $image = get_field( "image", $catID );?>
-            
-           <a href="<?php echo esc_url( $category_link ); ?>" title="Category Name" class="grid-wrap"> 
-                <div class="category-leader" style="background-image: url(<?php echo $image['url']; ?>);">
-
-                    <div>
-                        <h2 class="heading heading__sm"><?php echo $catTitle;?></h2>
-                    </div>
-                    <div class="article-count">
-                            <?php 
-                                $cat_count = get_category( $post_id );
-echo $cat_count->count;?><span> Articles</span>
-                    </div>
-                </div>
-            </a>
-    </div>       
-
-    <?php endwhile; endif;?>
-
-</div><!--c-->
-
-<!--<div class="heading-bar mb5">
-    <div class="container">
-        <div class="col">
-            <h4 class="heading heading__md heading__caps">Featured Article</h4>
-        </div>
-    </div>
-</div>-->
+<?php get_template_part('template-parts/category', 'slider');?>
 
 <div class="container">
     <div class="col">
@@ -159,8 +118,8 @@ echo $cat_count->count;?><span> Articles</span>
                 <h2 class="heading heading__lg"><?php the_title();?></h2>
                 <p class="meta">Posted on <?php the_date('jS F Y', '', ''); ?></p>
                 <?php the_content(); ?>
-                
-                	<?php get_template_part('template-parts/additional', 'articles');?>
+                    <?php get_template_part('template-parts/itineraries');?>
+                	<?php get_template_part('template-parts/related', 'articles');?>
             </div>
         
             <?php endwhile;
