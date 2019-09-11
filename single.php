@@ -32,7 +32,8 @@ get_header();
         
             <div class="content">
                 <?php the_content(); ?>
-                	<?php get_template_part('template-parts/related', 'articles');?>
+                <?php get_template_part('template-parts/itineraries');?>
+            	<?php get_template_part('template-parts/related', 'articles');?>
             </div>
         
             <?php endwhile;
