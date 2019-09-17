@@ -807,18 +807,55 @@ aside {
     }
     
     ul li {
-        margin-bottom: 0.25em;
-        background: white;
-        padding: 0.5em;
+        position: relative;
+        margin-bottom: 0.5em;
         font-size: 0.85em;
+        
+        &:before {
+            content:'';
+            position: absolute;
+            top:0;
+            right: 0;
+            width: 0;
+            height:100%;
+            background:#c6c6c6;
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+        
+        &:hover {
+            
+            &:before {
+                width:100%;
+            }
+            a {
+                background:transparent;
+                color: $header-color;
+            }
+        }
+        
+        a {
+            position: relative;
+            display: block;
+            background: $header-color;
+            padding-left: 0.5em;
+            color: white;
+            line-height: 3em;
+            transition: all 0.5s ease;
+            z-index: 10;
+        }
     }
     
     span {
-        float: right;
-        background: #e3e3e6;
+        position: absolute;
+        top:0;
+        right:0;
         width: 2em;
-        color: #262626;
+        line-height: 3em;
+        background: #c6c6c6;
+        color: $header-color;
         text-align: center;
+        z-index: 20;
     }
 }
 
