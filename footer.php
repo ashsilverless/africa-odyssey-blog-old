@@ -6,7 +6,7 @@
 ?>
 
 </main>
-</div><!-- #page -->
+</div><!-- #page content-->
 
 <footer>
 	<?php get_template_part('template-parts/footer', 'leaders');?>

@@ -103,16 +103,42 @@ header {
         }
         
         .search {
-            text-align: right;
             
-            input {
+            form {
+                position: relative;
+                background: white;
+                border-radius: 50px;
+            }
+            
+            button {
+                position: absolute;
+                right: -1em;
+                top: 0;
                 font-size: 1em;
-                width: 88%;
+                background: none;
+                border: none;
+                line-height: 1.75em;
+                padding: 0 2em;
+            }
+            
+            input.search-input {
+                font-size: 1em;
+                width: 90%;
                 margin-right: 0.5em;
                 padding:0.25em 1em;
                 border: none;
-                border-radius:50px;
+                background:transparent;
+                &:focus {
+                    outline:none;
+                }
             }
+            .search-submit {
+                display: inline-block;
+                max-width:10%;
+                &:before {
+                    font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f1ea";
+                }
+            }            
         }
     }    
 }
@@ -303,6 +329,12 @@ li.where:hover .where-wrapper,
     max-height: 100vh;
 }
 
+mark {
+    background-color: transparent;
+    font-weight: 400;
+}
+
+
 /*--- HOME--*/
 
 .hero {
@@ -432,6 +464,15 @@ li.where:hover .where-wrapper,
         
         span {
             margin-left:0.5em;
+        }
+    }
+    
+    &__sm {
+        padding:0.5em 2em;
+        font-size: 0.75em;
+        
+        &:hover {
+            padding-right:2em;
         }
     }
 }
@@ -1270,5 +1311,18 @@ article.post {
                 margin-left:0;
             }
         }
+    }
+}
+
+/*--- SEARCH--*/
+
+.posts {
+    border-bottom: 1px solid #c6c6c6;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    
+    .heading {
+        font-weight: 400;
+        line-height: 1.3em;
     }
 }

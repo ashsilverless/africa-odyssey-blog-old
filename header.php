@@ -153,7 +153,11 @@
             
             <div class="col">
                 <div class="search">
-                    <input><i class="fas fa-search"></i></div>                    
+                	<form role="search" method="get" class="<?php echo $color; ?>" action="<?php echo home_url('/'); ?>">
+                		<input name="s" class="search-input" type="search" placeholder="Search Blog" value="<?php echo get_search_query(); ?>"/>
+                		<button type="submit"><i class="fas fa-search"></i></button>
+                	</form>
+                	</div>                    
                 </div>
 
             </div>            
