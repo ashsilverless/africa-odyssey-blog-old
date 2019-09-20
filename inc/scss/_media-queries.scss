@@ -13,6 +13,11 @@
 	}
 }
 
+
+.menu-trigger {
+    display: none;
+}
+
 /*===========EXTRA LARGE (1600px)==========*/
 
 @media only screen and (max-width: 1600px) {
@@ -54,7 +59,7 @@
 
 /*===========MEDIUM (992px)==========*/
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1000px) {
 /*  body:before {
     content: 'MEDIUM';
     position: fixed;
@@ -70,7 +75,23 @@ body {
  
  /*---HEADER---*/
 
+.menu-trigger {
+    display: block;
+}
+
+.primary-menu {
+    display: none;
+}
+
+header .brand-logo {
+    border-left:none;
+}
+
 /*---CONTENT---*/
+
+.hero .secondary {
+    display:none;
+}
 
 /*---FOOTER---*/
   

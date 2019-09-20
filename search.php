@@ -37,6 +37,8 @@ if($s) array_push($filter, $s);?>
         	
         		<div id="post-<?php the_ID(); ?>" class="posts" >
         		
+        		<div class="image" style="background-image: url(<?php echo $featuredImage['0']; ?>);"><a href="<?php the_permalink();?>"></a></div>
+        		<div class="content">
         <a href="<?php the_permalink();?>">
             <h2 class="heading heading__md"><?php the_title();?></h2>
         </a>
@@ -44,6 +46,7 @@ if($s) array_push($filter, $s);?>
         <a href="<?php the_permalink();?>">
             <div class="button button__sm">Read More</div>    
         </a>
+        		</div>
         			
         		</div>
         		

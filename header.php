@@ -39,6 +39,10 @@
         <div class="container cols-4">
 
             <div class="col align-vert-c">
+                <div class="menu-trigger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
                 <ul class="primary-menu">
                         <li class="where">Where</li>
                         <li class="what">What</li>
