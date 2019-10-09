@@ -426,7 +426,7 @@ mark {
                 .heading {
                     margin-left: -5px;
                     padding: 0.5em 1em;
-                    background: #297a3c;
+                    background: $brand-primary;
                     color: white;
                 }
                 
@@ -810,7 +810,7 @@ ul {
 }
 
 .footer-accreds {
-    border-top: 5px solid #297a3c;    
+    border-top: 5px solid $brand-primary;    
     
     .container {
         margin-top:1em;
@@ -1121,7 +1121,7 @@ article.post {
             max-width: 80%;
             padding: 0.5em 1em;
             font-size: 1em;
-            background: #297a3c;
+            background: $brand-primary;
             color: white;
             border-bottom: none;
             text-align:left;
