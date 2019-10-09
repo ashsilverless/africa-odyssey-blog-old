@@ -17,7 +17,7 @@
                 <?php get_template_part('inc/img/trustpilot');?>     
             </div>
         
-        <div class="container cols-2 center align-vert-c">
+        <div class="container cols-2 center align-vert-c logo-panel">
 
             <?php if( have_rows('accreditations', 'options') ):
                 while ( have_rows('accreditations', 'options') ) : the_row();?>

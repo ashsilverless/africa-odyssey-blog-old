@@ -231,6 +231,11 @@ header .hover-menu {
     }
 }
 
+header ul {
+    margin-left: 0;
+    list-style: none;
+}
+
 .countries-wrapper {
     width: 1300px;
     background: $header-color;
@@ -852,7 +857,10 @@ aside {
         border-bottom: 1px solid #c6c6c6;
         padding-bottom: 0.5em;        
     }
-    
+    ul {
+        margin: 0;
+        list-style: none;
+    }    
     ul li {
         position: relative;
         margin-bottom: 0.5em;

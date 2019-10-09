@@ -71,6 +71,12 @@ jQuery(document).ready(function( $ ) {
         $('.more-wrapper').addClass("expand");
     });
 
+    $(".menu-trigger").click(function(event) {
+        $('.primary-menu').toggleClass('show');
+        $('.menu-trigger').toggleClass('active');       
+        $('header').children('.expand').removeClass('expand');
+    });
+    
 // GLOBAL OWL CAROUSEL SETTINGS
 
     $('.small-carousel').owlCarousel({
@@ -100,7 +106,7 @@ jQuery(document).ready(function( $ ) {
         nav:false,
         navText : ["&xlarr;","&xrarr;"],
         navClass: ['owl-prev', 'owl-next'],
-        stagePadding: 100,
+        stagePadding: 0,
         responsive:{
             0:{
                 items:2
