@@ -92,13 +92,18 @@
 <div class="what-wrapper">
     <div class="container">
         <div class="col">
-            <?php
-                wp_nav_menu( array(
-                'theme_location' => 'what-menu',
-                'container_class' => 'what-menu',
-                'link_before' => '<span>','link_after'=>'</span>'
-                ) );
-            ?>           
+            <div class="inspire-menu">
+            <?php if( have_rows('what_menu', 'options') ):
+                while ( have_rows('what_menu', 'options') ) : the_row();?>
+                <?php $inspireimage = get_sub_field('image');?>
+                    <div class="menu-item">
+                        <a href="<?php the_sub_field('item_target');?>">
+                        <div class="image" style="background-image: url(<?php echo $inspireimage['url']; ?>);"></div>
+                        <p><?php the_sub_field('item_text');?></p>
+                        </a>
+                    </div>
+                <?php endwhile; endif;?>
+            </div>
         </div>
     </div>
 </div>
