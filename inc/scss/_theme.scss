@@ -166,7 +166,7 @@ header .hover-menu {
     overflow: hidden; 
     transition: all 0.5s ease;
     
-    &.expand,
+    &.expand, 
     &:hover {
         max-height: 100vh;
     }
