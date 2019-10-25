@@ -1291,7 +1291,7 @@ header .hover-menu {
   transition: all 0.5s ease; }
   .what-wrapper.expand,
   .what-wrapper:hover {
-    max-height: 25vh; }
+    max-height: 100vh; }
   .what-wrapper .what-menu {
     margin: 1em 0; }
     .what-wrapper .what-menu a {
