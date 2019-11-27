@@ -21,15 +21,15 @@ jQuery(document).ready(function( $ ) {
             $("body").removeClass("scrolled");
         }
     });
-   
+
 /* SMOOTH SCROLL TO ANCHOR */
 
 	$('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-	
+
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-				
+
 			$('html,body').animate({
 				scrollTop: target.offset().top
 			}, 1000);
@@ -73,10 +73,15 @@ jQuery(document).ready(function( $ ) {
 
     $(".menu-trigger").click(function(event) {
         $('.primary-menu').toggleClass('show');
-        $('.menu-trigger').toggleClass('active');       
+        $('.menu-trigger').toggleClass('active');
         $('header').children('.expand').removeClass('expand');
     });
-    
+
+    $( ".search-trigger" ).click(function() {
+      $( ".search-wrapper" ).toggle( "fast", function() {
+      });
+    });
+
 // GLOBAL OWL CAROUSEL SETTINGS
 
     $('.small-carousel').owlCarousel({
@@ -103,7 +108,7 @@ jQuery(document).ready(function( $ ) {
         loop:true,
         autoplay:false,
         autoplayHoverPause:true,
-        nav:false,
+        nav:true,
         navText : ["&xlarr;","&xrarr;"],
         navClass: ['owl-prev', 'owl-next'],
         stagePadding: 0,
@@ -121,4 +126,3 @@ jQuery(document).ready(function( $ ) {
     });
 
 });//Don't remove ---- end of jQuery wrapper
-

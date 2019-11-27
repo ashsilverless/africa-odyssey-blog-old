@@ -12,7 +12,7 @@
 	$dir = $url[1] ? $url[1] : 'home';
 ?>
 
-<html <?php language_attributes(); ?> class="<?php echo $dir ?>">  
+<html <?php language_attributes(); ?> class="<?php echo $dir ?>">
 <head>
 
 <meta charset="UTF-8">
@@ -20,29 +20,33 @@
 <meta name="keywords" content=" ">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<title></title> 
+<title></title>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"><!-- Font Awesome CDN-->
 
 <!--<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" type="image/x-icon" />-->
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Raleway&display=swap" rel="stylesheet">
-	
+<link href="https://fonts.googleapis.com/css?family=Lato:300,700&display=swap" rel="stylesheet">
+
 <?php wp_head(); ?>
-	
+
 </head>
 
 <body <?php body_class(); ?>>
 
     <header>
 
-        <div class="container cols-4">
+        <div class="container cols-4 cols-sm-6">
 
             <div class="col align-vert-c">
                 <div class="menu-trigger">
                     <i class="fas fa-bars"></i>
                 </div>
-                
+				<div class="mobile-view reduced-logo">
+					<a href="https://www.africaodyssey.com/">
+	                	<?php get_template_part('inc/img/reduced', 'logo');?>
+	                </a>
+				</div>
                 <ul class="primary-menu">
                         <li class="where">Where</li>
                         <li class="what">What</li>
@@ -53,17 +57,20 @@
 
 <div class="col">
     <div class="brand-logo">
-        <a href="">
+        <a href="https://www.africaodyssey.com/">
             <img src="https://www.africaodyssey.com/site/assets/responsive/africa-logo.svg"/>
         </a>
     </div>
 </div>
 
-<div class="col">
+<div class="col" style="position:relative;">
+	<div class="mobile-view search-trigger">
+		<i class="fas fa-search"></i>
+	</div>
     <div class="contact-section">
         <a href="">
             <p>Contact</p>
-            <p>Direct Price Guarantee</p>        
+            <p>Direct Price Guarantee</p>
         </a>
     </div>
 </div>
@@ -84,7 +91,7 @@
                 'link_before' => '<span>','link_after'=>'</span>'
                 ) );
             ?>
-        </div>               
+        </div>
     </div>
     </div>
 </div>
@@ -138,39 +145,39 @@
                 'link_before' => '<span>','link_after'=>'</span>'
                 ) );
             ?>
-        </div>               
+        </div>
     </div>
     </div>
 </div>
 
 <div class="secondary-bar">
 
-        <div class="container cols-4 align-vert-c">
-            
+        <div class="container cols-4 cols-sm-12 align-vert-c">
+
             <div class="col">
                 <div class="telephone">
                     <a href="">UK +44 (0) 20 8704 1216</a>
                     <a href="">USA +1 866 356 4691</a>
                 </div>
             </div>
-            
+
             <div class="col">
                 <div class="email">
                 <a href="mailto:info@africaodyssey.com">info@africaodyssey.com</a>
                 </div>
-            </div>            
-            
-            <div class="col">
+            </div>
+
+            <div class="col search-wrapper">
                 <div class="search">
                 	<form role="search" method="get" class="<?php echo $color; ?>" action="<?php echo home_url('/'); ?>">
                 		<input name="s" class="search-input" type="search" placeholder="Search Blog" value="<?php echo get_search_query(); ?>"/>
                 		<button type="submit"><i class="fas fa-search"></i></button>
                 	</form>
-                	</div>                    
+                	</div>
                 </div>
 
-            </div>            
-            
+            </div>
+
         </div>
 
 </div>
