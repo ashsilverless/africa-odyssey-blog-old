@@ -39,7 +39,7 @@ jQuery(document).ready(function( $ ) {
 
 /* CLASS AND FOCUS ON CLICK */
 
-    $(".where").click(function(event) {
+    $(".where").hover(function(event) {
         $('.where-wrapper').siblings(".expand").removeClass("expand");
         $('.where-wrapper').addClass("expand");
     });
@@ -48,7 +48,7 @@ jQuery(document).ready(function( $ ) {
         $(this).removeClass( "expand" );
     });
 
-    $(".what").click(function(event) {
+    $(".what").hover(function(event) {
         $('.what-wrapper').siblings(".expand").removeClass("expand");
         $('.what-wrapper').addClass("expand");
     });
@@ -57,7 +57,7 @@ jQuery(document).ready(function( $ ) {
         $(this).removeClass( "expand" );
     });
 
-    $(".inspire").click(function(event) {
+    $(".inspire").hover(function(event) {
         $('.inspire-wrapper').siblings(".expand").removeClass("expand");
         $('.inspire-wrapper').addClass("expand");
     });
@@ -66,15 +66,18 @@ jQuery(document).ready(function( $ ) {
         $(this).removeClass( "expand" );
     });
 
-    $(".more").click(function(event) {
+    $(".more").hover(function(event) {
         $('.more-wrapper').siblings(".expand").removeClass("expand");
         $('.more-wrapper').addClass("expand");
     });
 
-    $(".menu-trigger").click(function(event) {
+    $( ".more-wrapper" ).mouseout(function() {
+        $(this).removeClass( "expand" );
+    });
+
+    $(".menu-trigger").on('click', function(event) {
         $('.primary-menu').toggleClass('show');
-        $('.menu-trigger').toggleClass('active');
-        $('header').children('.expand').removeClass('expand');
+        $('header .expand').removeClass('expand');
     });
 
     $( ".search-trigger" ).click(function() {

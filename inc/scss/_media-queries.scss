@@ -94,10 +94,10 @@ ul.primary-menu {
     position: absolute;
     top: 74px;
     width: 100%;
-    background: #272727;
+    background: $header-color;
     margin: 0;
     left: 0;
-    padding: 1em;
+    padding: 1em 2em;
     &.show {
         display: block;
     }
@@ -221,7 +221,7 @@ footer .container.cols-4>div {
 }
 /*---HEADER---*/
 
-header > .container {
+nav > .container {
 	>.col {
 		/*position: relative;*/
 	}
@@ -252,6 +252,11 @@ header .secondary-bar .telephone a {
 
 header .brand-logo a {
     width: 220px;
+}
+
+.more-wrapper {
+    left: 0;
+    width: 100%;
 }
 
 header .contact-section p {
@@ -304,12 +309,10 @@ header .menu-trigger {
 
 ul.primary-menu {
     position: absolute;
-    top: 52px;
+    top: 92px;
     width: 100%;
-    background: #272727;
     margin: 0;
     left: 0;
-    padding: 1em;
     &.show {
         display: block;
     }

@@ -35,50 +35,48 @@
 <body <?php body_class(); ?>>
 
     <header>
+		<nav>
+		    <div class="container cols-4 cols-sm-6">
 
-        <div class="container cols-4 cols-sm-6">
+		            <div class="col align-vert-c">
+		                <div class="menu-trigger">
+		                    <i class="fas fa-bars"></i>
+		                </div>
+						<div class="mobile-view reduced-logo">
+							<a href="https://www.africaodyssey.com/">
+			                	<?php get_template_part('inc/img/reduced', 'logo');?>
+			                </a>
+						</div>
+		                <ul class="primary-menu">
+		                        <li class="where">Where</li>
+		                        <li class="what">What</li>
+		                        <li class="inspire">Inspire</li>
+		                        <li class="more">More &plus;</li>
+		                    </ul>
+		            </div>
 
-            <div class="col align-vert-c">
-                <div class="menu-trigger">
-                    <i class="fas fa-bars"></i>
-                </div>
-				<div class="mobile-view reduced-logo">
-					<a href="https://www.africaodyssey.com/">
-	                	<?php get_template_part('inc/img/reduced', 'logo');?>
-	                </a>
+					<div class="col">
+					    <div class="brand-logo">
+					        <a href="https://www.africaodyssey.com/">
+					            <img src="https://www.africaodyssey.com/site/assets/responsive/africa-logo.svg"/>
+					        </a>
+					    </div>
+					</div>
+
+					<div class="col" style="position:relative;">
+						<div class="mobile-view search-trigger">
+							<i class="fas fa-search"></i>
+						</div>
+					    <div class="contact-section">
+					        <a href="">
+					            <p>Contact</p>
+					            <p>Direct Price Guarantee</p>
+					        </a>
+					    </div>
+					</div>
 				</div>
-                <ul class="primary-menu">
-                        <li class="where">Where</li>
-                        <li class="what">What</li>
-                        <li class="inspire">Inspire</li>
-                        <li class="more">More &plus;</li>
-                    </ul>
-            </div>
-
-<div class="col">
-    <div class="brand-logo">
-        <a href="https://www.africaodyssey.com/">
-            <img src="https://www.africaodyssey.com/site/assets/responsive/africa-logo.svg"/>
-        </a>
-    </div>
-</div>
-
-<div class="col" style="position:relative;">
-	<div class="mobile-view search-trigger">
-		<i class="fas fa-search"></i>
-	</div>
-    <div class="contact-section">
-        <a href="">
-            <p>Contact</p>
-            <p>Direct Price Guarantee</p>
-        </a>
-    </div>
-</div>
-
-
-
-</div>
-
+		</nav>
+		<div class="container" style="position:relative">
 <div class="where-wrapper">
     <div class="container">
         <div class="col">
@@ -99,7 +97,7 @@
 <div class="what-wrapper">
     <div class="container">
         <div class="col">
-            <div class="inspire-menu">
+            <div class="inspire-menu three-cols">
             <?php if( have_rows('what_menu', 'options') ):
                 while ( have_rows('what_menu', 'options') ) : the_row();?>
                 <?php $inspireimage = get_sub_field('image');?>
@@ -148,6 +146,8 @@
         </div>
     </div>
     </div>
+</div>
+
 </div>
 
 <div class="secondary-bar">

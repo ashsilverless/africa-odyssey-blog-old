@@ -9,7 +9,6 @@
 header {
     font-family: $brand-font;
     border-top:5px solid $brand-primary;
-    background: $header-color;
     color: white;
 
     a {
@@ -88,7 +87,7 @@ header {
         padding:0.5em 0;
         border-top: 1px solid #575757;
         font-size: 0.9em;
-
+        background:$header-color;
         .telephone {
             a {
                 margin-right: 2em;
@@ -151,14 +150,22 @@ header .hover-menu {
 
 .where-wrapper,
 .inspire-wrapper,
-.more-wrapper {
+.more-wrapper,
+.what-wrapper {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    position: absolute;
+    top: 2em;
+    width: 100%;
+    background: $header-color;
+    transition: max-height 0.3s ease;
 
     &.expand,
     &:hover {
         max-height: 100vh;
+    }
+    >.container {
+        border-bottom: 3px solid $brand-primary;
     }
 }
 
@@ -174,7 +181,6 @@ header .hover-menu {
 
     .what-menu {
         margin:1em 0;
-
         a {
             padding: 0.25em 0.5em;
             transition: all 0.5s ease;
@@ -187,9 +193,12 @@ header .hover-menu {
 
 .inspire-menu {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 1em 0;
     text-align: center;
+    &.three-cols {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     a {
         display: block;
     }
@@ -209,19 +218,25 @@ header .hover-menu {
             padding-bottom: 0.5em;
             margin-bottom: 0;
             border-bottom:3px solid $brand-primary;
+            font-size: 0.9em;
         }
     }
 }
-
+.more-wrapper {
+    left:15em;
+    width:auto;
+}
 .more.menu > ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding-bottom: 1em;
+    grid-template-columns: 1fr;
 
     li {
-        padding:1em 0 0.5em;
-        border-bottom: 3px solid $brand-primary;
-
+        margin-right: 0;
+        padding:0.5em 0 0.5em;
+        border-bottom: 1px solid #323232;
+        &:last-of-type {
+            border-bottom: none;
+        }
         a {
             padding: 0.25em 0.5em;
             transition: all 0.5s ease;
@@ -256,21 +271,31 @@ header ul {
         display: block;
         width: 100%;
         margin-bottom: 1em;
-        font-size: 2em;
+        padding-top: 1em;
+        font-size: 1.2em;
+        border-top:3px solid $brand-primary;
 
         > a {
             position: relative;
             display: block;
             padding: 0 0.25em;
-            border-bottom: 1px solid #2a7a3c;
             transition: color 0.5s ease;
 
             span {
+                display: block;
                 position: relative;
+                margin-bottom: 1em;
+                font-size: 1.2em;
+                text-transform: uppercase;
+                font-weight: 500;
                 z-index: 10;
+                transition:opacity 0.3s ease;
+                &:hover {
+                    opacity:0.7;
+                }
             }
 
-            &:before {
+            /*&:before {
                 position: absolute;
                 content:'';
                 left: 0;
@@ -283,7 +308,7 @@ header ul {
 
             &:hover:before {
                 width:100%;
-            }
+            }*/
         }
     }
 
@@ -296,11 +321,11 @@ header ul {
     }
 
     .sub-menu li a {
-        padding: 0.25em 0.5em;
+        padding: 0.5em 0.5em;
+        text-transform: uppercase;
         transition: all 0.5s ease;
-
         &:hover {
-            background:#0f0f0f;
+            opacity:0.6;
         }
     }
 }
@@ -605,7 +630,7 @@ article.featured {
 
     img {
         min-width: 100%;
-        box-shadow: 0 0 0 5px #e3e3e6;
+        /*box-shadow: 0 0 0 5px #e3e3e6;*/
     }
 }
 
