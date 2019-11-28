@@ -100,6 +100,17 @@
 
 </div>
 
+<div class="footer-links">
+    <div class="container cols-3">
+		<?php if( have_rows('link_section', 'options') ):
+			while ( have_rows('link_section', 'options') ) : the_row();?>
+		<div class="col">
+			<?php the_sub_field('links');?>
+		</div>
+	<?php endwhile; endif;?> 
+	</div>
+</div>
+
 <div class="socket">
 
     <div class="container cols-4 cols-sm-12">
