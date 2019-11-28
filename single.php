@@ -32,28 +32,34 @@ get_header();
         <div class="blog-nav">
             <div class="inner">
                 <div class="home">
+                    <div>
                     <a href="<?php echo get_home_url(); ?>">
                         <i class="fas fa-home"></i>
                     Blog Home
                     </a>
                 </div>
+                </div>
                 <div class="cats">
+                    <div>
                     <a href="/africa-odyssey-news/">
                         <i class="fas fa-list"></i>
                         All Categories
                     </a>
+                    </div>
                 </div>
                 <div class="this-cat">
                     <?php
                     $the_cat = get_the_category();
                     $category_name = $the_cat[0]->cat_name;
                     $category_link = get_category_link( $the_cat[0]->cat_ID );?>
+                    <div>
                     <a href="<?php echo $category_link; ?>">
                         <i class="fas fa-archive"></i>
                         <span>Posted In</span>
                         <?php $current_cat_id = the_category_ID(false);
                         echo get_cat_name($current_cat_id);?>
                     </a>
+                </div>
                 </div>
             </div>
         </div>

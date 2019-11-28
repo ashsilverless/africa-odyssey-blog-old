@@ -221,6 +221,41 @@ footer .container.cols-4>div {
 }
 /*---HEADER---*/
 
+.single article .blog-nav {
+	width:auto;
+	height:auto;
+	margin-top: -7em;
+	top: 6.5em;
+	z-index: 9999;
+	.inner {
+		left:0;
+		width: calc(100% + 4em);
+		margin-left: -2em;
+		margin-right: -2em;
+		display: flex;
+		flex-direction: row;
+	}
+	.home,
+	.cats,
+	.this-cat {
+		position: relative;
+		display: flex;
+	    width:33%;
+		flex-grow:1;
+		padding:0.25em;
+		>div {
+			display: flex;
+			align-self: center;
+			width:100%;
+			justify-content: center;
+		}
+	}
+	.this-cat i {
+		display: none;
+	}
+}
+
+
 nav > .container {
 	>.col {
 		/*position: relative;*/
@@ -410,9 +445,12 @@ article.featured .content {
 
 .single article {
     width: auto;
-    margin: -5em 0;
+    margin: -1em 0;
     padding: 2em;
-    }
+	.content {
+		padding-top: 7em;
+	}
+}
 
 /*---FOOTER---*/
 
