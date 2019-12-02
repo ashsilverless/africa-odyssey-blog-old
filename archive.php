@@ -22,6 +22,14 @@ get_header();?>
     <aside>
         <h3 class="heading heading__sm heading__caps font500">Categories</h3>
         <ul class="mt1">
+            <li class="home">
+                <a href="<?php echo get_home_url(); ?>">
+                <i class="fas fa-home"></i>
+                    Blog Home
+                </a>
+            </li>
+        </ul>
+        <ul>
        <?php
            $args = array(
             'orderby' => 'count',

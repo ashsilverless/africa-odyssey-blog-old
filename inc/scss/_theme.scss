@@ -956,8 +956,16 @@ aside {
         }
         &.current-cat {
             a {
-                background:$header-color;
+                background:#1a4023;
             }
+        }
+    }
+    li.home a{
+        background: $header-color;
+
+        i{
+            line-height: 3em;
+            margin-right: 0.5em;
         }
     }
 
