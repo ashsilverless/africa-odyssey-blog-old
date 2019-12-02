@@ -31,7 +31,7 @@ header {
 
         li {
             position: relative;
-
+            font-weight: 500;
             &:hover {
                 cursor:pointer;
             }
@@ -156,16 +156,14 @@ header .hover-menu {
     overflow: hidden;
     position: absolute;
     top: 2em;
-    width: 100%;
+    width: calc(100% - 6em);
+    padding: 1em 3em 0;
     background: $header-color;
     transition: max-height 0.3s ease;
-
+    border-bottom: 3px solid #2a7a3c;
     &.expand,
     &:hover {
         max-height: 100vh;
-    }
-    >.container {
-        border-bottom: 3px solid $brand-primary;
     }
 }
 
@@ -256,12 +254,8 @@ header ul {
     width: 1300px;
     background: $header-color;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    .imagemapbox img {
-        border: 5px solid #272727;
-    }
-
+    grid-template-columns: 50% 39%;
+    grid-gap: 1em;
     .countries.menu {
         margin-top:2em;
         margin-right: 2em
@@ -313,7 +307,7 @@ header ul {
     }
 
     li {
-        width:44%;
+        width:42%;
     }
 
     li.menu-item-has-children:hover > a:before {

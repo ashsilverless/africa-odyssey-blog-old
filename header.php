@@ -97,7 +97,7 @@
 <div class="what-wrapper">
     <div class="container">
         <div class="col">
-            <div class="inspire-menu three-cols">
+            <div class="inspire-menu">
             <?php if( have_rows('what_menu', 'options') ):
                 while ( have_rows('what_menu', 'options') ) : the_row();?>
                 <?php $inspireimage = get_sub_field('image');?>
