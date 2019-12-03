@@ -68,7 +68,7 @@
 							<i class="fas fa-search"></i>
 						</div>
 					    <div class="contact-section">
-					        <a href="">
+					        <a href="https://www.africaodyssey.com/contact-us">
 					            <p>Contact</p>
 					            <p>Direct Price Guarantee</p>
 					        </a>
@@ -156,8 +156,8 @@
 
             <div class="col">
                 <div class="telephone">
-                    <a href="">UK +44 (0) 20 8704 1216</a>
-                    <a href="">USA +1 866 356 4691</a>
+                    <a href="tel:+442087041216">UK +44 (0) 20 8704 1216</a>
+                    <a href="tel:+18663564691">USA +1 866 356 4691</a>
                 </div>
             </div>
 
