@@ -5,20 +5,20 @@
  * @package aob
  */
 
-/** = Ditch Junk = */ 
+/** = Ditch Junk = */
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 
 remove_action('wp_print_styles', 'print_emoji_styles');
 
-/** = Enqueue scripts and styles = */ 
+/** = Enqueue scripts and styles = */
 
 function aob_scripts() {
-	
+
 	wp_enqueue_style( 'aob-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'aob-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true);
-	
+
 }
 
 add_action( 'wp_enqueue_scripts', 'aob_scripts' );
@@ -41,10 +41,10 @@ add_action( 'init', 'sl_custom_menu' );
 /* Dashboard Config */
 
 add_action('wp_dashboard_setup', 'sl_dashboard_widget');
-  
+
 function sl_dashboard_widget() {
 global $wp_meta_boxes;
- 
+
 wp_add_dashboard_widget('custom_help_widget', 'Silverless Support', 'custom_dashboard_help');
 }
 function custom_dashboard_help() {
@@ -122,9 +122,9 @@ function my_custom_fonts() {
 /**
  * ACF Options Pages.
  */
- 
+
  if( function_exists('acf_add_options_page') ) {
-	
+
 	acf_add_options_page(array(
 		'page_title' 	=> 'Site Settings',
 		'menu_title'	=> 'Site Settings',
@@ -140,7 +140,7 @@ function my_custom_fonts() {
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
-	
+
 	acf_add_options_page(array(
 		'page_title' 	=> 'Footer Settings',
 		'menu_title'	=> 'Footer Settings',
@@ -150,11 +150,11 @@ function my_custom_fonts() {
 	));
 
 }
- 
+
 /**= Remove Default Menu Items =**/
- 
+
 function remove_menus(){
-    remove_menu_page( 'edit-comments.php' );//Comments 
+    remove_menu_page( 'edit-comments.php' );//Comments
 }
 add_action( 'admin_menu', 'remove_menus' );
 
@@ -163,14 +163,14 @@ add_action( 'admin_menu', 'remove_menus' );
 */
 function remove_admin_menus() {
    remove_menu_page( 'edit-comments.php' ); // Comments
-   remove_menu_page( 'tools.php' ); // Tools
+   //remove_menu_page( 'tools.php' ); // Tools
 }
 add_action( 'admin_menu', 'remove_admin_menus' );
 
 /*
 * Add option of uploading images to posts
 */
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
 
 /*
 * Add span on category list count
@@ -187,5 +187,3 @@ function custom_excerpt_length( $length ) {
         return 40;
     }
     add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-
-
